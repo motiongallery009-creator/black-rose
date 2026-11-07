@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="roseGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#E8A0B3" />
+      <stop offset="60%" stop-color="#B85C78" />
+      <stop offset="100%" stop-color="#2D1A22" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="#FFF5F6" stroke="#D6B58C" stroke-width="2"/>
+  <!-- Elegant rose bud -->
+  <path d="M50 25 C45 25 35 32 35 44 C35 56 46 68 50 72 C54 68 65 56 65 44 C65 32 55 25 50 25 Z" fill="url(#roseGrad)" />
+  <path d="M50 28 C42 34 40 44 48 52 C54 44 56 36 50 28 Z" fill="#B85C78" opacity="0.8"/>
+  <path d="M50 32 C55 38 56 46 50 54 C46 48 44 40 50 32 Z" fill="#E8A0B3" opacity="0.9"/>
+  <!-- Stem & delicate leaf -->
+  <path d="M50 72 Q49 82 52 86" stroke="#5A6855" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M50 75 Q42 74 40 78 Q45 80 50 77" fill="#6B7F65"/>
+  <circle cx="50" cy="40" r="2.5" fill="#D6B58C" opacity="0.8"/>
+</svg>
