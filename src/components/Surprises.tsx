@@ -16,24 +16,32 @@ export const Surprises: React.FC = () => {
   const handleOpenGift = () => {
     setIsGiftOpen(!isGiftOpen);
     if (!isGiftOpen) {
-      confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: { y: 0.75 },
-        colors: ['#E8A0B3', '#D6B58C', '#B85C78', '#FFFFFF'],
-      });
+      try {
+        confetti({
+          particleCount: 50,
+          spread: 70,
+          origin: { y: 0.75 },
+          colors: ['#E8A0B3', '#D6B58C', '#B85C78', '#FFFFFF'],
+        });
+      } catch {
+        // fallback
+      }
     }
   };
 
   const handleBloomRose = () => {
     setIsRoseBloomed(!isRoseBloomed);
     if (!isRoseBloomed) {
-      confetti({
-        particleCount: 35,
-        spread: 50,
-        origin: { y: 0.75 },
-        colors: ['#B85C78', '#E8A0B3'],
-      });
+      try {
+        confetti({
+          particleCount: 35,
+          spread: 50,
+          origin: { y: 0.75 },
+          colors: ['#B85C78', '#E8A0B3'],
+        });
+      } catch {
+        // fallback
+      }
     }
   };
 

@@ -18,34 +18,42 @@ export const BirthdayReveal: React.FC<BirthdayRevealProps> = ({
     if (triggerConfettiOnView && !hasTriggeredRef.current) {
       hasTriggeredRef.current = true;
       // Elegant, refined celebratory confetti with palette colors
-      confetti({
-        particleCount: 45,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ['#E8A0B3', '#B85C78', '#D6B58C', '#FFFFFF', '#49353C'],
-        ticks: 200,
-        gravity: 0.8,
-        scalar: 0.9,
-      });
-
-      const timer = setTimeout(() => {
+      try {
         confetti({
-          particleCount: 30,
-          angle: 60,
-          spread: 45,
-          origin: { x: 0.2, y: 0.7 },
-          colors: ['#E8A0B3', '#D6B58C'],
+          particleCount: 45,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#E8A0B3', '#B85C78', '#D6B58C', '#FFFFFF', '#49353C'],
+          ticks: 200,
+          gravity: 0.8,
+          scalar: 0.9,
         });
-        confetti({
-          particleCount: 30,
-          angle: 120,
-          spread: 45,
-          origin: { x: 0.8, y: 0.7 },
-          colors: ['#B85C78', '#FFFFFF'],
-        });
-      }, 400);
 
-      return () => clearTimeout(timer);
+        const timer = setTimeout(() => {
+          try {
+            confetti({
+              particleCount: 30,
+              angle: 60,
+              spread: 45,
+              origin: { x: 0.2, y: 0.7 },
+              colors: ['#E8A0B3', '#D6B58C'],
+            });
+            confetti({
+              particleCount: 30,
+              angle: 120,
+              spread: 45,
+              origin: { x: 0.8, y: 0.7 },
+              colors: ['#B85C78', '#FFFFFF'],
+            });
+          } catch {
+            // fallback
+          }
+        }, 400);
+
+        return () => clearTimeout(timer);
+      } catch {
+        // fallback
+      }
     }
   }, [triggerConfettiOnView]);
 
